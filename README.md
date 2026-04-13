@@ -16,13 +16,13 @@ The application is containerized using Docker and runs a production build served
 
 From the root of the project (Eduard_Bogoslovtcev_final_site), run:
 
-docker build -t Eduard_Bogoslovtcev_final_site .
+docker build -t eduard_bogoslovtcev_final_site .
 
 ---
 
 ## Run Docker Container
 
-docker run -d -p 5575:5575 --name Eduard_Bogoslovtcev_coding_assignment14 Eduard_Bogoslovtcev_final_site
+docker run -d -p 5575:5575 --name Eduard_Bogoslovtcev_coding_assignment14 eduard_bogoslovtcev_final_site
 
 ---
 

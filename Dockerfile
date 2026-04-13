@@ -1,20 +1,20 @@
 # Use official Node image to build the React app
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 
 # Set working directory
 WORKDIR /Eduard_Bogoslovtcev_final_site
 
 # Copy package files first (for caching)
-COPY package*.json ./
+COPY package.json yarn.lock ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies with Yarn
+RUN yarn install --frozen-lockfile
 
 # Copy the rest of the app
 COPY . .
 
 # Build the production version
-RUN npm run build
+RUN yarn build
 
 # Use a lightweight web server to serve the build
 FROM nginx:alpine
